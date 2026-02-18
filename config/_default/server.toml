@@ -7,17 +7,17 @@
     Access-Control-Allow-Origin = '*'
     Content-Security-Policy = """
         base-uri 'self'; \
-        connect-src 'self' *.google-analytics.com *.analytics.google.com *.googletagmanager.com; \
+        connect-src 'self' *.google-analytics.com *.analytics.google.com *.googletagmanager.com blob: data: https://unpkg.com; \
         default-src 'none'; \
         font-src 'self' fonts.gstatic.com; \
         form-action 'self'; \
-        frame-src player.cloudinary.com player.vimeo.com www.youtube-nocookie.com www.youtube.com; \
-        img-src 'self' *.google-analytics.com *.googletagmanager.com data: *.imgix.net *.imagekit.io *.cloudinary.com i.vimeocdn.com i.ytimg.com tile.openstreetmap.org; \
+        frame-src player.cloudinary.com player.vimeo.com www.youtube-nocookie.com www.youtube.com blob:; \
+        img-src 'self' *.google-analytics.com *.googletagmanager.com blob: data: *.imgix.net *.imagekit.io *.cloudinary.com i.vimeocdn.com i.ytimg.com tile.openstreetmap.org; \
         manifest-src 'self'; \
-        media-src 'self'; \
+        media-src 'self' blob:; \
         object-src 'none'; \
-        script-src 'self' *.google-analytics.com *.googletagmanager.com; \
-        style-src 'self' www.youtube.com; \
+        script-src 'self' *.google-analytics.com *.googletagmanager.com https://unpkg.com; \
+        style-src 'self' 'unsafe-inline' www.youtube.com https://fonts.googleapis.com; \
         """
     Permissions-Policy = 'geolocation=(), midi=(), sync-xhr=(), microphone=(), camera=(), magnetometer=(), gyroscope=(), fullscreen=(), payment=() '
     Referrer-Policy = 'strict-origin'
